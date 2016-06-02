@@ -1,0 +1,138 @@
+
+body {
+  font-size: 1.2em;
+	width: 80%;
+	margin: 0 auto;
+  text-align: justify;
+}
+
+img {
+	float: left;
+	border-radius: 5px;
+	border: 1px solid #ccc;
+	margin: 0 10px 6px 0;
+}
+
+.page-header {
+	margin-top: 3%;
+}
+
+.navigation {
+	float: left;
+}
+
+.navigation ul {
+	list-style-type: none;
+	display: inline-block;
+}
+
+.navigation ul li {
+	float: left;
+	padding: 10px 15px;
+	background-color: #ccc;
+	margin-right: 1px;
+}
+
+.navigation li:hover {
+	background-color: #999;
+}
+
+aside {
+	padding: 20% 4%;
+	float: left;
+	width: 15%;
+}
+
+
+section.posts {
+	width: 77%;
+	float: left;
+}
+
+.post {
+	padding: 20px;
+}
+
+.page-footer {
+	padding: 5%;
+}
+
+.about ul {
+	list-style-type: none;
+	font-weight: bold;
+}
+
+.clearfix:after {
+     visibility: hidden;
+     display: block;
+     font-size: 0;
+     content: " ";
+     clear: both;
+     height: 0;
+     }
+.clearfix { display: inline-block; }
+
+* html .clearfix { height: 1%; }
+.clearfix { display: block; }
+
+
+@media screen and (max-width: 44em) {
+
+	nav {
+    ul > li {
+			margin-top: 1px;
+      width: 100%;
+    }
+  }
+
+  .navigation {
+  	float: none;
+  }
+
+	.marketing {
+		width: 100%;
+	}
+
+	.posts {
+		width: 100%;
+	}
+}
+
+}
+
+.row::after {
+    content: "";
+    clear: both;
+    display: block;
+
+}
+[class*="col-"] {
+    float: left;
+
+}
+.coluna0 {
+  width: 0%;
+}
+.col-1 {width: 8.33%;}
+.col-3 {width: 19%;}
+
+.labels {
+  display: none;
+  float: left;
+}
+
+@media only screen and (max-width: 768px) {
+    /* For mobile phones: */
+    [class*="col-"] {
+        width: 75%;
+    }
+
+    [class*="header"] {
+        display: none;
+    }
+
+    [class*="labels"] {
+        display: block;
+        width: 25%;
+    }
+}

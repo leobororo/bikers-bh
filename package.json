@@ -1,0 +1,30 @@
+{
+  "name": "bikers-bh",
+  "version": "1.0.0",
+  "description": "Bikers BH - Projeto da disciplina de Desenvolvimento de Aplicacoes Web",
+  "main": "index.js",
+  "scripts": {
+    "start": "node server/bin/server.js",
+	"postinstall": "grunt build"
+  },
+  "cacheDirectories": [
+    "node_modules",
+    "client/components"
+  ],  
+  "dependencies": {
+    "express": "latest",
+    "grunt": "latest",
+    "grunt-cli": "latest",
+	"grunt-contrib-copy": "latest",
+    "grunt-concurrent": "latest",
+    "grunt-nodemon": "^0.4.2",
+    "load-grunt-config": "latest",
+    "load-grunt-tasks": "latest",
+    "time-grunt": "latest"
+  },
+  "engines": {
+    "node": "latest",
+	"npm": "latest"
+  },
+  "author": "Alexandre, Leandro, Leonardo e Samuel"
+}
