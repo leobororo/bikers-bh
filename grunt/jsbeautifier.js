@@ -7,8 +7,8 @@ module.exports = {
     },
     app: {
         src: [
-            "!client/components/**/*.*",
-            "client/**/*.js"
+            "client/**/*.js",
+            "!client/assets/components/**/*.*"
         ]
     },
     test: {

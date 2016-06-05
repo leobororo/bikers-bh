@@ -8,7 +8,6 @@ module.exports = {
                 src: ['**/*.*'],
                 dest: 'server/public/'
             }
-
         ]
     }
 };

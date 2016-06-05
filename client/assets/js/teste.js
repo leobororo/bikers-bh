@@ -1,1 +1,0 @@
-var superteste = 0;

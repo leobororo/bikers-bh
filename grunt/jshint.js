@@ -11,7 +11,8 @@ module.exports = {
     },
     app: {
         src: [
-            "client/**/*.js"
+            "client/**/*.js",
+            "!client/assets/components/**"
         ]
     },
     test: {
