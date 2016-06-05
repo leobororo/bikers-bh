@@ -18,13 +18,16 @@
 	"grunt-contrib-copy": "latest",
     "grunt-concurrent": "latest",
     "grunt-nodemon": "^0.4.2",
+    "grunt-contrib-jshint": "latest",	
     "load-grunt-config": "latest",
     "load-grunt-tasks": "latest",
-    "time-grunt": "latest"
+    "time-grunt": "latest",
+	"grunt-contrib-watch": "latest",
+	"jshint-stylish": "latest"
   },
   "engines": {
-    "node": "latest",
-	"npm": "latest"
+    "node": "4.4.3",
+    "npm": "2.15.1"
   },
   "author": "Alexandre, Leandro, Leonardo e Samuel"
 }
