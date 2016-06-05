@@ -22,8 +22,10 @@
     "load-grunt-config": "latest",
     "load-grunt-tasks": "latest",
     "time-grunt": "latest",
+	"grunt-jsbeautifier": "latest",
 	"grunt-contrib-watch": "latest",
-	"jshint-stylish": "latest"
+	"jshint-stylish": "latest",
+	"grunt-newer": "latest"
   },
   "engines": {
     "node": "4.4.3",

@@ -1,6 +1,6 @@
 module.exports = function(grunt) {
     "use strict";
 
-    grunt.registerTask("build", ["copy", "jshint"]);
+    grunt.registerTask("build", ["jshint", "newer:jsbeautifier", "copy"]);
 
 };

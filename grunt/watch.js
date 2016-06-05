@@ -1,18 +1,18 @@
 module.exports = {
-	//copiar arquivos modificados na pasta client
+    //copiar arquivos quando modificados para a pasta client
     copy: {
         files: [
             "client/**/*.*"
         ],
         tasks: ["copy"]
     },
-	//ferramenta JSHint para verificar potenciais problemas nos códigos javascript
+    //ferramenta JSHint para verificar potenciais problemas nos códigos Javascript e ferramenta JSBeautifier para formatar Javascript e HTML (utiliza ferramenta grunt-newer para formatar apenas arquivos novos ou modificados)
     gruntFiles: {
         files: [
             "grunt/**/*.js",
             "Gruntfile.js"
         ],
-        tasks: ["jshint"]
+        tasks: ["jshint", "newer:jsbeautifier"]
     },
     js: {
         files: [
@@ -20,6 +20,6 @@ module.exports = {
             "client/**/*.js"
 
         ],
-        tasks: ["jshint"]
+        tasks: ["jshint", "newer:jsbeautifier"]
     }
 };
