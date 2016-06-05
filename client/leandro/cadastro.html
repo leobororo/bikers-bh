@@ -16,10 +16,10 @@
 			</div>
         <nav class="navigation">
           <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="participantes.html">Participantes</a></li>
-            <li><a href="cadastro.html">Cadastro</a></li>
-            <li><a href="dicas.html">Dicas</a></li>
+            <li><a class="menu" href="index.html">Home</a></li>
+            <li><a class="menu" href="participantes.html">Participantes</a></li>
+            <li><a class="menu" href="cadastro.html">Cadastro</a></li>
+            <li><a class="menu" href="dicas.html">Dicas</a></li>
           </ul>
         </nav>
       </header>
@@ -38,22 +38,38 @@
          Com isso, espera-se que 6% de todos os deslocamentos da capital se deem por meio do uso da bicicleta.
       </aside>
       <section class="posts">
-      <article class="post">
-        <head>
-          <h1>Quem somos</h1>
-        </head>
-        O programa tem como objetivo promover o uso da bicicleta na capital, criando facilidades
-        para quem optar por esse meio de transporte, já que é um veículo de baixo custo de aquisição
-        e de manutenção, não poluente, silencioso, flexível em seus deslocamentos e promotor da melhoria da saúde.
-        Foram identificados 380 km de rotas cicláveis (possíveis de implantar ciclovias e/ou ciclofaixas),
-        na capital mineira. Até o fim de 2013, a meta é atingir 100 km de rotas cicloviárias na cidade,
-        sendo que a maior parte - 76,19 km – terá investimento da Prefeitura de Belo Horizonte (PBH) e 23,81 km
-        serão financiados pelo Banco Mundial. Conforme consta no PLANMOB BH, a Prefeitura de Belo Horizonte e a BHTRANS
-        trabalham para atingir a meta de implantação dos 380 km de rotas cicloviárias estruturantes até 2020.
-         Com isso, espera-se que 6% de todos os deslocamentos da capital se deem por meio do uso da bicicleta.
-      </article>
+				<article class="post">
+        <header>
+          <h1>Usuários</h1>
+        </header>
+        <form id="form1">
+          <section id="content"></section>
 
+          <script id="list-users-template" type="text/x-handlebars-template">
+            <div class="row header">
+              <div class="col-3">Nome</div>
+              <div class="col-3">Email</div>
+              <div class="col-3">Sexo</div>
+              <div class="col-3">Ações</div>
+            </div>
 
+            {{#each usuario}}
+            <div class="row">
+                <div class="labels">
+                  <div class="coluna0">Nome</div>
+                  <div class="coluna0">Email</div>
+                  <div class="coluna0">Sexo</div>
+                  <div class="coluna0">Ações</div>
+                </div>
+                <div class="col-3">{{name}}</div>
+                <div class="col-3">{{email}}</div>
+                <div class="col-3">{{gender}}</div>
+                <div class="col-3">Excluir</div>
+            </div>
+            {{/each}}
+        </script>
+      </form>
+    </article>
     <script src="../assets/app.js" type="text/javascript" ></script>
   </body>
 </html>

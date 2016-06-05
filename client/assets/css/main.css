@@ -13,6 +13,11 @@ img {
 	margin: 0 10px 6px 0;
 }
 
+a, a:visited, a:hover, a:active {
+  color: inherit;
+  text-decoration: none;
+}
+
 .page-header {
 	margin-top: 3%;
 }
