@@ -38,3 +38,5 @@ Então, executamos o comando grunt.task.loadTasks("grunt") para que as tarefas c
 		a) a tarefa copy utiliza o plugin grunt-contrib-copy para copiar arquivos de front-end da pasta client (exceto client/components) para a pasta server/public
 
 		b) utilizar o plugin grunt-concurrent para executar as seguintes tarefas concorrentemente: nodemon e watch. A tarefa watch utiliza o plugin grunt-contrib-watch para formatar, checar a qualidade do código e copiar arquivos fonte toda vez que estes forem modificados. A tarefa nodemon utiliza o plugin grunt-nodemon para reiniciar o servidor toda vez que houver uma mudança nos arquivos da aplicação.
+
+3) Acresentamos a chamada para o script "bower install" ao script de start do npm install (package.json) para que sejam baixadas as dependências do JQuery e do Handlebars para o front-end. A execução do script "bower install" vai baixar dependências contidas no arquivo bower.json.
