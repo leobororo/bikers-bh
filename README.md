@@ -35,7 +35,7 @@ Repositório para o trabalho final da disciplina de Desenvolvimento de Aplicaç�
 
   	. time-grunt: plugin para calcular o tempo de execução de cada tarefa
 
-    Depois utilizamos o comando grunt.task.loadTasks("grunt") para que as tarefas contidas no diretório grunt sejam carregadas.
+ Depois utilizamos o comando grunt.task.loadTasks("grunt") para que as tarefas contidas no diretório grunt sejam carregadas.
 
  5) A tarefa do arquivo build.js que será executada na fase postinstall do NPM associará as seguintes tarefas à fase "build" do NPM:
 
