@@ -18,6 +18,8 @@ $(function() {
      *
      */
     CrudUser.prototype.renderUserList = function() {
+        console.log("render user list");
+
         var source = $("#users-template").html(),
             template = Handlebars.compile(source),
             html;
@@ -59,7 +61,7 @@ $(function() {
             $('img[href$=' + href + ']').parent().parent().remove();
         };
         render();
-        //CrudUser.prototype.makeAjaxRequest('DELETE', render, CrudUser.prototype.error, "http://web-mobile.herokuapp.com/api/users" + "/" + href);
+        CrudUser.prototype.makeAjaxRequest('DELETE', render, CrudUser.prototype.error, "../api/users" + "/" + href);
     };
 
 
@@ -119,14 +121,13 @@ $(function() {
         };
 
         render();
-
-        //CrudUser.prototype.makeAjaxRequest('POST', render, CrudUser.prototype.error, "http://web-mobile.herokuapp.com/api/users" + "/" + href);
     };
 
     /**
      * Método para salvar um usuário
      */
     CrudUser.prototype.saveUser = function() {
+        var href = $(this).attr('href');
 
         var dados = {
             name: $("#name").val(),
@@ -134,7 +135,7 @@ $(function() {
             gender: $("#gender").val()
         };
 
-        //CrudUser.prototype.makeAjaxRequest('PUT', CrudUser.prototype.renderUserList, CrudUser.prototype.error, "http://web-mobile.herokuapp.com/api/users", dados);
+        CrudUser.prototype.makeAjaxRequest('PUT', CrudUser.prototype.renderUserList, CrudUser.prototype.error, "../api/users" + "/" + href, dados);
     };
 
 
@@ -173,36 +174,35 @@ $(function() {
      * Esse método é chamado para inicializar a página e registrar os eventos do menu
      */
     CrudUser.prototype.init = function() {
-       var clickHome = function() {
-         $(".home").show();
-         $(".participantes").hide();
-         $(".participante").hide();
-         $(".dicas").hide();
-       }
+        var clickHome = function() {
+            $(".home").show();
+            $(".participantes").hide();
+            $(".participante").hide();
+            $(".dicas").hide();
+        };
 
-       var clickParticipantes = function() {
-         CrudUser.prototype.renderUserList();
-         $(".home").hide();
-         $(".participantes").show();
-         $(".participante").hide();
-         $(".dicas").hide();
-       }
+        var clickParticipantes = function() {
+            CrudUser.prototype.renderUserList();
+            $(".home").hide();
+            $(".participantes").show();
+            $(".participante").hide();
+            $(".dicas").hide();
+        };
 
-       var clickParticipante = function() {
-         CrudUser.prototype.renderUserParaInsert();
-         $(".home").hide();
-         $(".participantes").hide();
-         $(".participante").show();
-         $(".dicas").hide();
-       }
+        var clickParticipante = function() {
+            CrudUser.prototype.renderUserParaInsert();
+            $(".home").hide();
+            $(".participantes").hide();
+            $(".participante").show();
+            $(".dicas").hide();
+        };
 
-       var clickDicas = function() {
-         $(".home").hide();
-         $(".participantes").hide();
-         $(".participante").hide();
-         $(".dicas").show();
-       }
-
+        var clickDicas = function() {
+            $(".home").hide();
+            $(".participantes").hide();
+            $(".participante").hide();
+            $(".dicas").show();
+        };
 
         $("#link-home").on('click', clickHome);
         $("#link-participantes").on('click', clickParticipantes);
