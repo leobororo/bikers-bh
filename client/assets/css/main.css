@@ -54,6 +54,11 @@ section.posts {
 	float: left;
 }
 
+input {
+  width: 60%;
+  float: left;
+}
+
 .post {
 	padding: 20px;
 }
@@ -103,6 +108,13 @@ section.posts {
 	}
 }
 
+.center {
+  margin: 0 auto;
+  width: 10%;
+}
+
+.row {
+  margin-top: 20px;
 }
 
 .row::after {
@@ -130,6 +142,9 @@ section.posts {
 .col-12 {width: 100%;}
 .labels {
   display: none;
+  float: left;
+}
+.labels_cadastro {
   float: left;
 }
 

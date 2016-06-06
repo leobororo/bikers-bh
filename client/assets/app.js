@@ -18,7 +18,7 @@ $(function() {
      *
      */
     CrudUser.prototype.renderUserList = function() {
-        var source = $("#list-users-template").html(),
+        var source = $("#users-template").html(),
             template = Handlebars.compile(source),
             html;
 
@@ -30,83 +30,186 @@ $(function() {
                 usuario: data
             };
             html = template(context);
-            $("#content").append(html);
-            //registryEvents();
+            $("#content-users").html(html);
+            $(".participantes").show();
+            $(".participante").hide();
+            registryEvents();
         };
+
+
+
+        var registryEvents = function() {
+            $(".botao-view-update").on('click', CrudUser.prototype.renderUser);
+            $(".botao-delete").on('click', CrudUser.prototype.deleteUser);
+        };
+
+        CrudUser.prototype.makeAjaxRequest('GET', render, CrudUser.prototype.error, "http://web-mobile.herokuapp.com/api/users");
+    };
+
+    /**
+     * Método para remover um usuário
+     */
+    CrudUser.prototype.deleteUser = function() {
+        var href = $(this).attr('href');
 
         /**
-         * @callback error
+         * @callback render
          */
-        var error = function(data) {
-            console.dir(data);
+        var render = function(data) {
+            $('img[href$=' + href + ']').parent().parent().remove();
         };
-
-        //var registryEvents = function() {
-        //    $("#add-user").on('click', this.renderCreateUser());
-        //    $("#delete-user").on('click', this.deleteUser());
-        //    $("#show-user").on('click', this.showUser());
-        //};
-
-        this.makeAjaxRequest('GET', render, error);
+        render();
+        //CrudUser.prototype.makeAjaxRequest('DELETE', render, CrudUser.prototype.error, "http://web-mobile.herokuapp.com/api/users" + "/" + href);
     };
 
 
     /**
-     * Implementar método para mostrar um usuário
+     * Método para exibir dados do participante
      */
     CrudUser.prototype.renderUser = function() {
+        var href = $(this).attr('href');
 
+        var source = $("#user-template").html(),
+            template = Handlebars.compile(source),
+            html;
+
+        /**
+         * @callback render
+         */
+        var render = function(data) {
+            html = template(data);
+            $("#content-user").html(html);
+            $(".participantes").hide();
+            $(".participante").show();
+
+            registryEvents();
+        };
+
+        var registryEvents = function() {
+            $("#botao-atualizar").on('click', CrudUser.prototype.saveUser);
+            $("#botao-voltar").on('click', CrudUser.prototype.renderUserList);
+        };
+
+        CrudUser.prototype.makeAjaxRequest('GET', render, CrudUser.prototype.error, "http://web-mobile.herokuapp.com/api/users" + "/" + href);
     };
 
     /**
-     * Implementar método para renderizar form
+     * Método para exibir dados do participante
      */
-    CrudUser.prototype.renderCreateUser = function() {
+    CrudUser.prototype.renderUserParaInsert = function() {
+        var source = $("#user-template").html(),
+            template = Handlebars.compile(source),
+            html;
 
+        /**
+         * @callback render
+         */
+        var render = function(data) {
+            html = template(data);
+            $("#content-user").html(html);
+            $(".participantes").hide();
+            $(".participante").show();
+
+            registryEvents();
+        };
+
+        var registryEvents = function() {
+            $("#botao-atualizar").on('click', CrudUser.prototype.saveUser);
+            $("#botao-voltar").on('click', CrudUser.prototype.renderUserList);
+        };
+
+        render();
+
+        //CrudUser.prototype.makeAjaxRequest('POST', render, CrudUser.prototype.error, "http://web-mobile.herokuapp.com/api/users" + "/" + href);
     };
 
     /**
-     * Implementar método para salvar um usuário, action do button submit
+     * Método para salvar um usuário
      */
     CrudUser.prototype.saveUser = function() {
 
+        var dados = {
+            name: $("#name").val(),
+            email: $("#email").val(),
+            gender: $("#gender").val()
+        };
+
+        //CrudUser.prototype.makeAjaxRequest('PUT', CrudUser.prototype.renderUserList, CrudUser.prototype.error, "http://web-mobile.herokuapp.com/api/users", dados);
     };
 
-    /**
-     * Implementar método para remover um usuário, action do link delete
-     */
-    CrudUser.prototype.deleteUser = function() {
-
-    };
 
     /**
-     * Esse método é utilizado para executar as requisição ajax
+     * Esse método é utilizado para executar as requisições ajax
      *
-     * @param {string} method - envia uma string com o método HTTP - eg: 'GET', 'POST'
+     * @param {string} method - 'GET', 'POST', 'DELETE', 'PUT'
      * @param {render} render
      * @param {error} error
-     * @param {string} params - Request parameters - eg: /users/9823498273
+     * @param {string} umaUrl - URL
+     * @param {string} dadosUsuario - dados json
      *
      */
-    CrudUser.prototype.makeAjaxRequest = function(method, render, error, params) {
+    CrudUser.prototype.makeAjaxRequest = function(method, render, error, umaUrl, dadosUsuario) {
         $.ajax({
-            url: "http://web-mobile.herokuapp.com/api/users" + (params ? ("/" + params) : ""),
+            url: umaUrl,
+            data: dadosUsuario,
             method: method,
-            success: function(data) {
-                render(data);
+            success: function(dados) {
+                render(dados);
             },
-            error: function(data) {
-                error(data);
+            error: function(dados) {
+                error(dados);
             }
         });
     };
 
     /**
-     * Esse método é chamado para inicializar a página
-     * HOME que no nosso caso é a lista de usuários
+     * @callback error
+     */
+    CrudUser.prototype.error = function(data) {
+        console.dir(data);
+    };
+
+    /**
+     * Esse método é chamado para inicializar a página e registrar os eventos do menu
      */
     CrudUser.prototype.init = function() {
-        this.renderUserList();
+       var clickHome = function() {
+         $(".home").show();
+         $(".participantes").hide();
+         $(".participante").hide();
+         $(".dicas").hide();
+       }
+
+       var clickParticipantes = function() {
+         CrudUser.prototype.renderUserList();
+         $(".home").hide();
+         $(".participantes").show();
+         $(".participante").hide();
+         $(".dicas").hide();
+       }
+
+       var clickParticipante = function() {
+         CrudUser.prototype.renderUserParaInsert();
+         $(".home").hide();
+         $(".participantes").hide();
+         $(".participante").show();
+         $(".dicas").hide();
+       }
+
+       var clickDicas = function() {
+         $(".home").hide();
+         $(".participantes").hide();
+         $(".participante").hide();
+         $(".dicas").show();
+       }
+
+
+        $("#link-home").on('click', clickHome);
+        $("#link-participantes").on('click', clickParticipantes);
+        $("#link-participante").on('click', clickParticipante);
+        $("#link-dicas").on('click', clickDicas);
+
+        clickHome();
     };
 
     crudUser = new CrudUser();
