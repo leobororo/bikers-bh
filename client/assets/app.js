@@ -18,8 +18,6 @@ $(function() {
      *
      */
     CrudUser.prototype.renderUserList = function() {
-        console.log("render user list");
-
         var source = $("#users-template").html(),
             template = Handlebars.compile(source),
             html;
@@ -45,7 +43,7 @@ $(function() {
             $(".botao-delete").on('click', CrudUser.prototype.deleteUser);
         };
 
-        CrudUser.prototype.makeAjaxRequest('GET', render, CrudUser.prototype.error, "http://web-mobile.herokuapp.com/api/users");
+        CrudUser.prototype.makeAjaxRequest('GET', render, CrudUser.prototype.error, "../api/users");
     };
 
     /**
@@ -80,6 +78,7 @@ $(function() {
          */
         var render = function(data) {
             html = template(data);
+
             $("#content-user").html(html);
             $(".participantes").hide();
             $(".participante").show();
@@ -87,12 +86,12 @@ $(function() {
             registryEvents();
         };
 
-        var registryEvents = function() {
+        var registryEvents = function(cadastro) {
             $("#botao-atualizar").on('click', CrudUser.prototype.saveUser);
             $("#botao-voltar").on('click', CrudUser.prototype.renderUserList);
         };
 
-        CrudUser.prototype.makeAjaxRequest('GET', render, CrudUser.prototype.error, "http://web-mobile.herokuapp.com/api/users" + "/" + href);
+        CrudUser.prototype.makeAjaxRequest('GET', render, CrudUser.prototype.error, "../api/users" + "/" + href);
     };
 
     /**
@@ -116,7 +115,7 @@ $(function() {
         };
 
         var registryEvents = function() {
-            $("#botao-atualizar").on('click', CrudUser.prototype.saveUser);
+            $("#botao-atualizar").on('click', CrudUser.prototype.createUser);
             $("#botao-voltar").on('click', CrudUser.prototype.renderUserList);
         };
 
@@ -130,12 +129,28 @@ $(function() {
         var href = $(this).attr('href');
 
         var dados = {
+            _id: href,
+            gender: $("#gender").val(),
+            email: $("#email").val(),
+            name: $("#name").val(),
+        };
+
+        CrudUser.prototype.makeAjaxRequest('PUT', CrudUser.prototype.renderUserList, CrudUser.prototype.error, "../api/users", dados);
+    };
+
+    /**
+     * Método para criar um usuário
+     */
+    CrudUser.prototype.createUser = function() {
+        var href = $(this).attr('href');
+
+        var dados = {
             name: $("#name").val(),
             email: $("#email").val(),
             gender: $("#gender").val()
         };
 
-        CrudUser.prototype.makeAjaxRequest('PUT', CrudUser.prototype.renderUserList, CrudUser.prototype.error, "../api/users" + "/" + href, dados);
+        CrudUser.prototype.makeAjaxRequest('POST', CrudUser.prototype.renderUserList, CrudUser.prototype.error, "../api/users", dados);
     };
 
 

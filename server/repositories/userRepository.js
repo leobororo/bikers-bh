@@ -11,8 +11,8 @@ var UserRepository = (function() {
 
   function save(body) {
     return new Promise(function(fullfill, reject) {
-      if(body.id) {
-        User.findById(body.id, function(err, data) {
+      if(body._id) {
+        User.findById(body._id, function(err, data) {
           bindBody(body, data);
           data.save(function (err, user) {
             if (err) return reject(err);

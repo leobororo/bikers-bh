@@ -13,3 +13,12 @@ var config = {
   }
 };
 mongoose.connect(config.database.connectionString);
+
+var db = mongoose.connection;
+ 
+db.on('error', function (err) {
+console.log('connection error', err);
+});
+db.once('open', function () {
+console.log('connected.');
+});
