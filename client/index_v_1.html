@@ -2,61 +2,39 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="../assets/css/main.css" media="screen" title="no title" charset="utf-8">
-    <link rel="stylesheet" href="../assets/fontawesome/css/font-awesome.min.css" media="screen" title="no title" charset="utf-8">
-    <script src="../assets/components/jquery.js" type="text/javascript"></script>
-    <script src="../assets/components/handlebars.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="assets/css/main.css" media="screen" title="no title" charset="utf-8">
+    <script src="assets/components/jquery.js" type="text/javascript"></script>
+    <script src="assets/components/handlebars.js" type="text/javascript"></script>
     <title>Pedala BH</title>
   </head>
   <body>
-    <article>
-      <header class = "clearfix page-header">
-        <div class="div-header">
-          <nav class="navigation">
-            <ul>
-              <li id="link-home"><a class="menu"><span class="fa fa-home fa-fw"></span>Home</a></li>
-              <li id="link-participantes"><a class="menu"><span class="fa fa-users fa-fw"></span>Participantes</a></li>
-              <li id="link-participante"><a class="menu"><span class="fa fa-user-plus fa-fw"></span>Cadastro</a></li>
-              <li id="link-dicas"><a class="menu"><span class="fa fa-bicycle fa-fw"></span>Dicas</a></li>
-            </ul>
-          </nav>
-			  </div>
+    <article class="blog">
+      <header class = "clearfix">
+        <div class="logo">
+          <img src="assets/images/images.jpg" alt="" width="20%" />
+			</div>
+        <nav class="navigation">
+          <ul>
+            <li id="link-home"><a class="menu">Home</a></li>
+            <li id="link-participantes"><a class="menu">Participantes</a></li>
+            <li id="link-participante"><a class="menu">Cadastro</a></li>
+            <li id="link-dicas"><a class="menu">Dicas</a></li>
+          </ul>
+        </nav>
       </header>
-      <div class="main clearfix">
-      <aside class="frases">
-        <header>
-          <h1>Frases famosas</h1>
-        </header>
-        <section>
-          <article>
-            <i class="fa fa-quote-left fa-1x fa-pull-left" aria-hidden="true"></i>
-            ‎”Quando eu era criança tive um sonho – Eu queria ter a minha própria bicicleta. Quando ganhei uma bike eu devo ter sido o garoto mais feliz de Liverpool, talvez do mundo. Eu vivia por ela. A maioria das crianças largavam suas bicicletas no quintal durante a noite. Não eu. Eu insistia em guardar dentro de casa e na primeira noite eu ainda mantinha na minha cama
-            <i class="fa fa-quote-right fa-1x fa-pull-right" aria-hidden="true"></i>
-            <footer>
-              By <b>John Lennon</b>
-            </footer>
-          </article>
-        </section>
-        <section>
-          <article>
-            <i class="fa fa-quote-left fa-1x fa-pull-left" aria-hidden="true"></i>
-            Toda vez que vejo um adulto em uma bicicleta, eu já não me desespero quanto ao futuro da raça humana”
-            <i class="fa fa-quote-right fa-1x fa-pull-right" aria-hidden="true"></i>
-            <footer>
-              By <b>H. G. Wells</b>
-            </footer>
-          </article>
-        </section>
-        <section>
-          <article>
-            <i class="fa fa-quote-left fa-1x fa-pull-left" aria-hidden="true"></i>
-            Toda vez que vejo um adulto em uma bicicleta, eu já não me desespero quanto ao futuro da raça humana”
-            <i class="fa fa-quote-right fa-1x fa-pull-right" aria-hidden="true"></i>
-            <footer>
-              By <b>H. G. Wells</b>
-            </footer>
-          </article>
-        </section>
+      <aside class="marketing">
+        <head>
+          <h1>Quem somos</h1>
+        </head>
+        O programa tem como objetivo promover o uso da bicicleta na capital, criando facilidades
+        para quem optar por esse meio de transporte, já que é um veículo de baixo custo de aquisição
+        e de manutenção, não poluente, silencioso, flexível em seus deslocamentos e promotor da melhoria da saúde.
+        Foram identificados 380 km de rotas cicláveis (possíveis de implantar ciclovias e/ou ciclofaixas),
+        na capital mineira. Até o fim de 2013, a meta é atingir 100 km de rotas cicloviárias na cidade,
+        sendo que a maior parte - 76,19 km – terá investimento da Prefeitura de Belo Horizonte (PBH) e 23,81 km
+        serão financiados pelo Banco Mundial. Conforme consta no PLANMOB BH, a Prefeitura de Belo Horizonte e a BHTRANS
+        trabalham para atingir a meta de implantação dos 380 km de rotas cicloviárias estruturantes até 2020.
+         Com isso, espera-se que 6% de todos os deslocamentos da capital se deem por meio do uso da bicicleta.
       </aside>
       <section class="posts">
 				<article class="post participantes">
@@ -68,10 +46,10 @@
 
           <script id="users-template" type="text/x-handlebars-template">
             <div class="row header">
-              <div class="col-4">Nome</div>
-              <div class="col-4">Email</div>
-              <div class="col-2">Sexo</div>
-              <div class="col-2">Ações</div>
+              <div class="col-3">Nome</div>
+              <div class="col-3">Email</div>
+              <div class="col-3">Sexo</div>
+              <div class="col-3">Ações</div>
             </div>
 
             {{#each usuario}}
@@ -82,12 +60,12 @@
                   <div class="coluna0">Sexo</div>
                   <div class="coluna0">Ações</div>
                 </div>
-                <div class="col-4">{{name}}</div>
-                <div class="col-4">{{email}}</div>
-                <div class="col-2">{{gender}}</div>
-                <div class="col-2">
-                  <img class="botao-view-update" src="../assets/images/visualizar.png" href="{{_id}}" alt="Visualizar ou atualizar"/>
-                  <img class="botao-delete" src="../assets/images/remover.png" href="{{_id}}" alt="Remover"/>
+                <div class="col-3">{{name}}</div>
+                <div class="col-3">{{email}}</div>
+                <div class="col-3">{{gender}}</div>
+                <div class="col-3">
+                  <img class="botao-view-update" src="assets/images/visualizar.png" href="{{_id}}" alt="Visualizar ou atualizar"/>
+                  <img class="botao-delete" src="assets/images/remover.png" href="{{_id}}" alt="Remover"/>
                 </div>
             </div>
             {{/each}}
@@ -116,8 +94,8 @@
         </div>
         <div class="row">
           <div "col-6">
-            <img id="botao-atualizar" src="../assets/images/atualizar.png" href="{{_id}}" alt="Atualizar"/>
-            <img id="botao-voltar" src="../assets/images/voltar.png" alt="Voltar"/>
+            <img id="botao-atualizar" src="assets/images/atualizar.png" href="{{_id}}" alt="Atualizar"/>
+            <img id="botao-voltar" src="assets/images/voltar.png" alt="Voltar"/>
           </div>
         </div>
       </script>
@@ -356,44 +334,7 @@
     <footer>
       Fonte: <b>Revista Bikeaction</b>, <b>www.revistabikeaction.com.br</b>
     </footer>
-      </article>
-    </section>
-    <aside class="frases-fim">
-      <header>
-        <h1>Frases famosas</h1>
-      </header>
-      <section>
-        <article>
-          <i class="fa fa-quote-left fa-1x fa-pull-left fa-border" aria-hidden="true"></i>
-          ‎”Quando eu era criança tive um sonho – Eu queria ter a minha própria bicicleta. Quando ganhei uma bike eu devo ter sido o garoto mais feliz de Liverpool, talvez do mundo. Eu vivia por ela. A maioria das crianças largavam suas bicicletas no quintal durante a noite. Não eu. Eu insistia em guardar dentro de casa e na primeira noite eu ainda mantinha na minha cama
-          <i class="fa fa-quote-right fa-1x fa-pull-right fa-border" aria-hidden="true"></i>
-          <footer>
-            By <b>John Lennon</b>
-          </footer>
-        </article>
-      </section>
-      <section>
-        <article>
-          <i class="fa fa-quote-left fa-1x fa-pull-left fa-border" aria-hidden="true"></i>
-          Toda vez que vejo um adulto em uma bicicleta, eu já não me desespero quanto ao futuro da raça humana”
-          <i class="fa fa-quote-right fa-1x fa-pull-right fa-border" aria-hidden="true"></i>
-          <footer>
-            By <b>H. G. Wells</b>
-          </footer>
-        </article>
-      </section>
-      <section>
-        <article>
-          <i class="fa fa-quote-left fa-1x fa-pull-left fa-border" aria-hidden="true"></i>
-          Toda vez que vejo um adulto em uma bicicleta, eu já não me desespero quanto ao futuro da raça humana”
-          <i class="fa fa-quote-right fa-1x fa-pull-right fa-border" aria-hidden="true"></i>
-          <footer>
-            By <b>H. G. Wells</b>
-          </footer>
-        </article>
-      </section>
-    </aside>
-  </div>
-  <script src="../assets/app.js" type="text/javascript" ></script>
+</article>
+  <script src="assets/app.js" type="text/javascript" ></script>
   </body>
 </html>

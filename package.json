@@ -8,6 +8,10 @@
   "start": "node server/bin/server.js",
 	"postinstall": "bower install && grunt build"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/leobororo/bikers-bh"
+  },
   "cacheDirectories": [
     "node_modules",
     "client/components"

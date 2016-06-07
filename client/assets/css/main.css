@@ -8,9 +8,14 @@ body {
 
 img {
 	float: left;
-	border-radius: 5px;
-	border: 1px solid #ccc;
-	margin: 0 10px 6px 0;
+}
+
+aside article {
+  margin-top: 20%;
+}
+
+aside article footer {
+  margin-top: 2%;
 }
 
 a, a:visited, a:hover, a:active {
@@ -22,32 +27,51 @@ a, a:visited, a:hover, a:active {
 	margin-top: 3%;
 }
 
+.div-header {
+  background-image: url('../images/header-2.jpg');
+  background-size: 100% 100%;
+  width: 100%;
+  height: 14em;
+}
+
 .navigation {
-	float: left;
+  float: right;
+  margin-right: 0.4em;
 }
 
 .navigation ul {
 	list-style-type: none;
-	display: inline-block;
 }
 
 .navigation ul li {
 	float: left;
-	padding: 10px 15px;
-	background-color: #ccc;
-	margin-right: 1px;
+	padding: 0.4em 0.8em;
 }
 
 .navigation li:hover {
 	background-color: #999;
+  opacity: 0.8;
 }
 
-aside {
-	padding: 20% 4%;
-	float: left;
-	width: 15%;
+.navigation span {
+  margin-right: 0.5em;
 }
 
+.main {
+  background-color: #000000;
+  color: #FFFFFF;
+}
+
+aside.frases {
+  display: block;
+  padding: 5% 4%;
+  float: right;
+  width: 15%;
+}
+
+aside.frases-fim {
+  display: none;
+}
 
 section.posts {
 	width: 77%;
@@ -85,6 +109,12 @@ input {
 * html .clearfix { height: 1%; }
 .clearfix { display: block; }
 
+@media screen and (max-width: 72em) {
+  .navigation ul li {
+    float: none;
+  	padding: 0.4em 0.8em;
+  }
+}
 
 @media screen and (max-width: 44em) {
 
@@ -98,14 +128,28 @@ input {
   .navigation {
   	float: none;
   }
+}
 
-	.marketing {
-		width: 100%;
-	}
+@media screen and (max-width: 79em) {
+  section.posts {
+  	width: 100%;
+  	float: left;
+  }
 
-	.posts {
-		width: 100%;
-	}
+  aside.frases {
+    display: none;
+  }
+
+  aside.frases-fim {
+    display: block;
+    padding: 20px;
+    float: left;
+    width: 100%;
+  }
+
+  aside article {
+    margin-top: 5%;
+  }
 }
 
 .center {
@@ -125,7 +169,6 @@ input {
 }
 [class*="col-"] {
     float: left;
-
 }
 .coluna0 {width: 0%;}
 .col-1 {width: 8.33%;}
@@ -148,7 +191,7 @@ input {
   float: left;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 48em) {
     /* For mobile phones: */
     [class*="col-"] {
         width: 75%;
