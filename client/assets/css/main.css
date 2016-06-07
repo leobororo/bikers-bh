@@ -57,8 +57,9 @@ a, a:visited, a:hover, a:active {
   margin-right: 0.5em;
 }
 
-.main {
-
+aside {
+  background-color: rgba(0, 0, 0, 1);
+  color: #FFFFFF;
 }
 
 aside.frases {
@@ -83,7 +84,12 @@ input {
 }
 
 .post {
-	padding: 20px;
+	padding: 1em;
+}
+
+.main {
+  background-color: rgba(0, 0, 0, 1);
+  color: #FFFFFF;
 }
 
 .page-footer {
@@ -141,13 +147,17 @@ input {
 
   aside.frases-fim {
     display: block;
-    padding: 20px;
     float: left;
     width: 100%;
   }
 
   aside article {
     margin-top: 5%;
+    padding: 2%;
+  }
+
+  aside header {
+    padding-left: 2%;
   }
 }
 

@@ -56,7 +56,7 @@ $(function() {
          * @callback render
          */
         var render = function(data) {
-            $('img[href$=' + href + ']').parent().parent().remove();
+            $('i[href$=' + href + ']').parent().parent().remove();
         };
         render();
         CrudUser.prototype.makeAjaxRequest('DELETE', render, CrudUser.prototype.error, "../api/users" + "/" + href);
