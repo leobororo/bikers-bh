@@ -4,6 +4,7 @@
   "description": "Bikers BH - Projeto da disciplina de Desenvolvimento de Aplicacoes Web",
   "author": "Alexandre, Leandro, Leonardo e Samuel",
   "main": "app.js",
+  "license": "ISC",
   "scripts": {
   "start": "node server/bin/server.js",
 	"postinstall": "bower install && grunt build"
@@ -22,24 +23,24 @@
     "express": "latest",
     "grunt": "latest",
     "grunt-cli": "latest",
-	"grunt-contrib-copy": "latest",
+  	"grunt-contrib-copy": "latest",
     "grunt-concurrent": "latest",
     "grunt-nodemon": "^0.4.2",
     "grunt-contrib-jshint": "latest",
     "load-grunt-config": "latest",
     "load-grunt-tasks": "latest",
     "time-grunt": "latest",
-	"grunt-jsbeautifier": "latest",
-	"grunt-contrib-watch": "latest",
-	"jshint-stylish": "latest",
-	"grunt-newer": "latest",
-	"mongoose": "^4.4.19",
+  	"grunt-jsbeautifier": "latest",
+  	"grunt-contrib-watch": "latest",
+  	"jshint-stylish": "latest",
+  	"grunt-newer": "latest",
+  	"mongoose": "^4.4.19",
     "morgan": "~1.6.1",
-	"promise": "^7.1.1",
-	"requirejs": "latest"
+  	"promise": "^7.1.1",
+  	"requirejs": "latest"
   },
   "engines": {
-    "node": "4.4.3",
-    "npm": "2.15.1"
+    "node": "4.4.5",
+    "npm": "3.7.2"
   }
 }

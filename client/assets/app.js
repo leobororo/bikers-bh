@@ -47,7 +47,7 @@ $(function() {
     };
 
     /**
-     * Método para remover um usuário
+     * Método para remover um participante
      */
     CrudParticipante.prototype.deleteParticipante = function() {
         var href = $(this).attr('href');
@@ -123,7 +123,7 @@ $(function() {
     };
 
     /**
-     * Método para salvar um usuário
+     * Método para salvar um participante
      */
     CrudParticipante.prototype.saveParticipante = function() {
         var href = $(this).attr('href');
@@ -139,7 +139,7 @@ $(function() {
     };
 
     /**
-     * Método para criar um usuário
+     * Método para criar um participante
      */
     CrudParticipante.prototype.createParticipante = function() {
         var href = $(this).attr('href');
