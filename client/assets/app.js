@@ -1,12 +1,12 @@
 $(function() {
 
-    var CrudUser = function() {
+    var CrudParticipante = function() {
 
         },
-        crudUser;
+        crudParticipante;
 
     /**
-     * @method renderUserList
+     * @method renderParticipanteList
      *
      * Essse método é responsável por:
      *
@@ -17,8 +17,8 @@ $(function() {
      * - chamar o método responsável por requisições ajax
      *
      */
-    CrudUser.prototype.renderUserList = function() {
-        var source = $("#users-template").html(),
+    CrudParticipante.prototype.renderParticipanteList = function() {
+        var source = $("#participantes-template").html(),
             template = Handlebars.compile(source),
             html;
 
@@ -30,7 +30,7 @@ $(function() {
                 usuario: data
             };
             html = template(context);
-            $("#content-users").html(html);
+            $("#content-participantes").html(html);
             $(".participantes").show();
             $(".participante").hide();
             registryEvents();
@@ -39,17 +39,17 @@ $(function() {
 
 
         var registryEvents = function() {
-            $(".botao-view-update").on('click', CrudUser.prototype.renderUser);
-            $(".botao-delete").on('click', CrudUser.prototype.deleteUser);
+            $(".botao-view-update").on('click', CrudParticipante.prototype.renderParticipante);
+            $(".botao-delete").on('click', CrudParticipante.prototype.deleteParticipante);
         };
 
-        CrudUser.prototype.makeAjaxRequest('GET', render, CrudUser.prototype.error, "../api/users");
+        CrudParticipante.prototype.makeAjaxRequest('GET', render, CrudParticipante.prototype.error, "../api/users");
     };
 
     /**
      * Método para remover um usuário
      */
-    CrudUser.prototype.deleteUser = function() {
+    CrudParticipante.prototype.deleteParticipante = function() {
         var href = $(this).attr('href');
 
         /**
@@ -59,17 +59,17 @@ $(function() {
             $('i[href$=' + href + ']').parent().parent().remove();
         };
         render();
-        CrudUser.prototype.makeAjaxRequest('DELETE', render, CrudUser.prototype.error, "../api/users" + "/" + href);
+        CrudParticipante.prototype.makeAjaxRequest('DELETE', render, CrudParticipante.prototype.error, "../api/users" + "/" + href);
     };
 
 
     /**
      * Método para exibir dados do participante
      */
-    CrudUser.prototype.renderUser = function() {
+    CrudParticipante.prototype.renderParticipante = function() {
         var href = $(this).attr('href');
 
-        var source = $("#user-template").html(),
+        var source = $("#participante-template").html(),
             template = Handlebars.compile(source),
             html;
 
@@ -79,7 +79,7 @@ $(function() {
         var render = function(data) {
             html = template(data);
 
-            $("#content-user").html(html);
+            $("#content-participante").html(html);
             $(".participantes").hide();
             $(".participante").show();
 
@@ -87,18 +87,18 @@ $(function() {
         };
 
         var registryEvents = function(cadastro) {
-            $("#botao-atualizar").on('click', CrudUser.prototype.saveUser);
-            $("#botao-voltar").on('click', CrudUser.prototype.renderUserList);
+            $("#botao-atualizar").on('click', CrudParticipante.prototype.saveParticipante);
+            $("#botao-voltar").on('click', CrudParticipante.prototype.renderParticipanteList);
         };
 
-        CrudUser.prototype.makeAjaxRequest('GET', render, CrudUser.prototype.error, "../api/users" + "/" + href);
+        CrudParticipante.prototype.makeAjaxRequest('GET', render, CrudParticipante.prototype.error, "../api/users" + "/" + href);
     };
 
     /**
      * Método para exibir dados do participante
      */
-    CrudUser.prototype.renderUserParaInsert = function() {
-        var source = $("#user-template").html(),
+    CrudParticipante.prototype.renderParticipanteParaInsert = function() {
+        var source = $("#participante-template").html(),
             template = Handlebars.compile(source),
             html;
 
@@ -107,7 +107,7 @@ $(function() {
          */
         var render = function(data) {
             html = template(data);
-            $("#content-user").html(html);
+            $("#content-participante").html(html);
             $(".participantes").hide();
             $(".participante").show();
 
@@ -115,8 +115,8 @@ $(function() {
         };
 
         var registryEvents = function() {
-            $("#botao-atualizar").on('click', CrudUser.prototype.createUser);
-            $("#botao-voltar").on('click', CrudUser.prototype.renderUserList);
+            $("#botao-atualizar").on('click', CrudParticipante.prototype.createParticipante);
+            $("#botao-voltar").on('click', CrudParticipante.prototype.renderParticipanteList);
         };
 
         render();
@@ -125,7 +125,7 @@ $(function() {
     /**
      * Método para salvar um usuário
      */
-    CrudUser.prototype.saveUser = function() {
+    CrudParticipante.prototype.saveParticipante = function() {
         var href = $(this).attr('href');
 
         var dados = {
@@ -135,13 +135,13 @@ $(function() {
             name: $("#name").val(),
         };
 
-        CrudUser.prototype.makeAjaxRequest('PUT', CrudUser.prototype.renderUserList, CrudUser.prototype.error, "../api/users", dados);
+        CrudParticipante.prototype.makeAjaxRequest('PUT', CrudParticipante.prototype.renderParticipanteList, CrudParticipante.prototype.error, "../api/users", dados);
     };
 
     /**
      * Método para criar um usuário
      */
-    CrudUser.prototype.createUser = function() {
+    CrudParticipante.prototype.createParticipante = function() {
         var href = $(this).attr('href');
 
         var dados = {
@@ -150,7 +150,7 @@ $(function() {
             gender: $("#gender").val()
         };
 
-        CrudUser.prototype.makeAjaxRequest('POST', CrudUser.prototype.renderUserList, CrudUser.prototype.error, "../api/users", dados);
+        CrudParticipante.prototype.makeAjaxRequest('POST', CrudParticipante.prototype.renderParticipanteList, CrudParticipante.prototype.error, "../api/users", dados);
     };
 
 
@@ -164,7 +164,7 @@ $(function() {
      * @param {string} dadosUsuario - dados json
      *
      */
-    CrudUser.prototype.makeAjaxRequest = function(method, render, error, umaUrl, dadosUsuario) {
+    CrudParticipante.prototype.makeAjaxRequest = function(method, render, error, umaUrl, dadosUsuario) {
         $.ajax({
             url: umaUrl,
             data: dadosUsuario,
@@ -181,14 +181,14 @@ $(function() {
     /**
      * @callback error
      */
-    CrudUser.prototype.error = function(data) {
+    CrudParticipante.prototype.error = function(data) {
         console.dir(data);
     };
 
     /**
      * Esse método é chamado para inicializar a página e registrar os eventos do menu
      */
-    CrudUser.prototype.init = function() {
+    CrudParticipante.prototype.init = function() {
         var clickHome = function() {
             $(".home").show();
             $(".participantes").hide();
@@ -197,7 +197,7 @@ $(function() {
         };
 
         var clickParticipantes = function() {
-            CrudUser.prototype.renderUserList();
+            CrudParticipante.prototype.renderParticipanteList();
             $(".home").hide();
             $(".participantes").show();
             $(".participante").hide();
@@ -205,7 +205,7 @@ $(function() {
         };
 
         var clickParticipante = function() {
-            CrudUser.prototype.renderUserParaInsert();
+            CrudParticipante.prototype.renderParticipanteParaInsert();
             $(".home").hide();
             $(".participantes").hide();
             $(".participante").show();
@@ -227,8 +227,8 @@ $(function() {
         clickHome();
     };
 
-    crudUser = new CrudUser();
+    crudParticipante = new CrudParticipante();
 
-    crudUser.init();
+    crudParticipante.init();
 
 });
