@@ -58,3 +58,7 @@ Repositório para o trabalho final da disciplina de Desenvolvimento de Aplicaç�
   9) Acrescentamos ao arquivo bower.json as seguintes dependências: JQuery, Handlebars e Fontawesome.
 
   10) Inclui uma API de backend para manter o cadastro de participantes da aplicação. Para isso foi necessário criar o módulo server/aplicacao_backend.js e carregá-lo durante a execução do script server\bin\server.js. Este módulo utiliza o plugin express para configurar o acesso à API do backend e carrega o módulo server/config/mongo.js que configura a conexão desta API com a instância do MongoDB em execução no momento em que a aplicação estiver também em execução.
+
+  11) Inclusão das seguintes dependências no arquivo package.json: grunt-karma, karma, karma-jasmine, karma-phantomjs-launcher, karma-htmlfile-reporter, phantomjs-prebuilt, phantomjs. Configuramos o karma através da criação do arquivo karma.conf.js que define dentre outras coisas que o browser a ser utilizado nos testes é o PhantomJS e que deverá ser gerado o arquivo HTML units.html com o resultado da execução de nossos testes.
+
+  12) Criação de uma tarefa karma.js com informações sobre os arquivos de deverão ser utilizados para execução dos testes.

@@ -45,7 +45,6 @@
     "karma": "latest",
     "karma-jasmine": "latest",
     "karma-phantomjs-launcher": "latest",
-    "karma-chrome-launcher": "latest",
     "karma-htmlfile-reporter": "latest",
     "phantomjs-prebuilt": "latest",
     "phantomjs": "latest"
