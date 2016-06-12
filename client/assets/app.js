@@ -43,7 +43,7 @@ $(function() {
             $(".botao-delete").on('click', CrudParticipante.prototype.deleteParticipante);
         };
 
-        CrudParticipante.prototype.makeAjaxRequest('GET', render, CrudParticipante.prototype.error, "../api/users");
+        CrudParticipante.prototype.makeAjaxRequest('GET', render, CrudParticipante.prototype.error, "../api/participantes");
     };
 
     /**
@@ -59,7 +59,7 @@ $(function() {
             $('i[href$=' + href + ']').parent().parent().remove();
         };
         render();
-        CrudParticipante.prototype.makeAjaxRequest('DELETE', render, CrudParticipante.prototype.error, "../api/users" + "/" + href);
+        CrudParticipante.prototype.makeAjaxRequest('DELETE', render, CrudParticipante.prototype.error, "../api/participantes" + "/" + href);
     };
 
 
@@ -91,7 +91,7 @@ $(function() {
             $("#botao-voltar").on('click', CrudParticipante.prototype.renderParticipanteList);
         };
 
-        CrudParticipante.prototype.makeAjaxRequest('GET', render, CrudParticipante.prototype.error, "../api/users" + "/" + href);
+        CrudParticipante.prototype.makeAjaxRequest('GET', render, CrudParticipante.prototype.error, "../api/participantes" + "/" + href);
     };
 
     /**
@@ -135,7 +135,7 @@ $(function() {
             name: $("#name").val(),
         };
 
-        CrudParticipante.prototype.makeAjaxRequest('PUT', CrudParticipante.prototype.renderParticipanteList, CrudParticipante.prototype.error, "../api/users", dados);
+        CrudParticipante.prototype.makeAjaxRequest('PUT', CrudParticipante.prototype.renderParticipanteList, CrudParticipante.prototype.error, "../api/participantes", dados);
     };
 
     /**
@@ -150,7 +150,7 @@ $(function() {
             gender: $("#gender").val()
         };
 
-        CrudParticipante.prototype.makeAjaxRequest('POST', CrudParticipante.prototype.renderParticipanteList, CrudParticipante.prototype.error, "../api/users", dados);
+        CrudParticipante.prototype.makeAjaxRequest('POST', CrudParticipante.prototype.renderParticipanteList, CrudParticipante.prototype.error, "../api/participantes", dados);
     };
 
 
