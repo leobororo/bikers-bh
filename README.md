@@ -70,3 +70,21 @@ Repositório para o trabalho final da disciplina de Desenvolvimento de Aplicaç�
   15) Inclusão das seguintes dependências no arquivo package.json: grunt-karma, karma, karma-jasmine, karma-phantomjs-launcher, karma-htmlfile-reporter, phantomjs-prebuilt, phantomjs. Configuramos o karma através da criação do arquivo karma.conf.js que define dentre outras coisas que o browser a ser utilizado nos testes é o PhantomJS e que deverá ser gerado o arquivo HTML units.html com o resultado da execução de nossos testes.
 
   16) Criação de uma tarefa karma.js com informações sobre os arquivos de deverão ser utilizados para execução dos testes.
+
+  ## Um pouco mais sobre o site responsível
+  01 Sobre o Nav:
+    O menu contém as seguintes configurações de visualização:
+    A) 100% - O menu abre um ao lado do outro (float: left);
+    B) 44em - O menu fica um abaixo do outro  (float:none);
+    B) 40em - As opções do menu e a imagem são escondidas. O menu passa a ser acessado por um ícone localizado no canto superior direito da tela. Instrução de uso:
+          - Clique na imagem do menu para visualizar as opções;
+          - Selecione o link desejado;
+          - Após finalizar, clique na parte cinza ao lado esquedo do menu para ele seja fechado.
+  02) Sobre o aside - section - article - footer;
+      Á pagina está separada em duas partes abaixo do menu obedecendo as seguintes configurações de visualização:
+      A ) 100% - A página é dividida em duas parte. A parte central aparece o conteúdo das opções contidas no menu e ao lado esquerdo as Frases famosas;
+      B ) Outras: Em qualquer mudança de tamanho as frases famosas vão para o final da página preservando o conteúdo dos menus na parte central da página;
+  03) Sobre form:
+    O form está destinado para a relação de participando  preservando as seguintes configurações de visualização:
+    a) 100% - A relação de usuário cadastrado aparece em formato de tabela com o nome da coluna e os dados abaixo;
+    B)  Outras: - Em qualquer mudança de tamanho as colunas da tabelas passa a ser exibida em linha, com uma legenda e os dados ao lado;
