@@ -55,4 +55,6 @@ Repositório para o trabalho final da disciplina de Desenvolvimento de Aplicaç�
 
   8) A execução do script "bower install" utilizará o arquivo bower.json como arquivo de configuração. No arquivo bower.json estão especificadas quais são as dependências de front-end que precisamos para nossa aplicação
 
-  8) Acrescentamos ao arquivo bower.json as seguintes dependências: JQuery e Handlebars
+  9) Acrescentamos ao arquivo bower.json as seguintes dependências: JQuery, Handlebars e Fontawesome.
+
+  10) Inclui uma API de backend para manter o cadastro de participantes da aplicação. Para isso foi necessário incluir no diretório server/config o arquivo mongo.js para configuração da conexão desta API com a instância do MongoDB em execução no momento em que a aplicação estiver também em execução.

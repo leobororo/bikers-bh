@@ -6,8 +6,9 @@
   "main": "app.js",
   "license": "ISC",
   "scripts": {
-  "start": "node server/bin/server.js",
-	"postinstall": "bower install && grunt build"
+    "start": "node server/bin/server.js",
+    "test": "karma",
+  	"postinstall": "bower install && grunt build"
   },
   "repository": {
     "type": "git",
@@ -27,6 +28,7 @@
     "grunt-concurrent": "latest",
     "grunt-nodemon": "^0.4.2",
     "grunt-contrib-jshint": "latest",
+    "grunt-karma": "latest",
     "load-grunt-config": "latest",
     "load-grunt-tasks": "latest",
     "time-grunt": "latest",
@@ -38,6 +40,15 @@
     "morgan": "~1.6.1",
   	"promise": "^7.1.1",
   	"requirejs": "latest"
+  },
+  "devDependencies": {
+    "karma": "latest",
+    "karma-jasmine": "latest",
+    "karma-phantomjs-launcher": "latest",
+    "karma-chrome-launcher": "latest",
+    "karma-htmlfile-reporter": "latest",
+    "phantomjs-prebuilt": "latest",
+    "phantomjs": "latest"
   },
   "engines": {
     "node": "4.4.5",
