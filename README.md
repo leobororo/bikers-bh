@@ -69,4 +69,4 @@ Repositório para o trabalho final da disciplina de Desenvolvimento de Aplicaç�
 
   15) Inclusão das seguintes dependências no arquivo package.json: grunt-karma, karma, karma-jasmine, karma-phantomjs-launcher, karma-htmlfile-reporter, phantomjs-prebuilt, phantomjs. Configuramos o karma através da criação do arquivo karma.conf.js que define dentre outras coisas que o browser a ser utilizado nos testes é o PhantomJS e que deverá ser gerado o arquivo HTML units.html com o resultado da execução de nossos testes.
 
-  12) Criação de uma tarefa karma.js com informações sobre os arquivos de deverão ser utilizados para execução dos testes.
+  16) Criação de uma tarefa karma.js com informações sobre os arquivos de deverão ser utilizados para execução dos testes.
