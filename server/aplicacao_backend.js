@@ -13,7 +13,7 @@ app.use(function(req, res, next) {
   next();
 });
 
-var userRouter = require('./routes/userRouter.js');
+var participanteRouter = require('./routes/participanteRouter.js');
 
 app.use(logger('dev'));
 app.use(bodyParser.json());
@@ -22,6 +22,6 @@ app.use(cookieParser());
 
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/api/participantes', userRouter);
+app.use('/api/participantes', participanteRouter);
 
 module.exports = app;

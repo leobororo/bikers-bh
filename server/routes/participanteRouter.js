@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 
-var controller = require('../controllers/userController');
+var controller = require('../controllers/participanteController');
 
 router.route('/')
     .get(controller.findAll());

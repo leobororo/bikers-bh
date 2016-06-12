@@ -2,7 +2,7 @@ var mongoose = require('mongoose');
 
 var Schema = mongoose.Schema;
 
-var UserSchema = new Schema({
+var ParticipanteSchema = new Schema({
   name  : String,
   email : String,
   birthDate: Date,
@@ -10,6 +10,6 @@ var UserSchema = new Schema({
   age : Number
 });
 
-var User = mongoose.model('User', UserSchema);
+var Participante = mongoose.model('Participante', ParticipanteSchema);
 
-module.exports = User;
+module.exports = Participante;
