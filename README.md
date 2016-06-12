@@ -57,4 +57,4 @@ Repositório para o trabalho final da disciplina de Desenvolvimento de Aplicaç�
 
   9) Acrescentamos ao arquivo bower.json as seguintes dependências: JQuery, Handlebars e Fontawesome.
 
-  10) Inclui uma API de backend para manter o cadastro de participantes da aplicação. Para isso foi necessário incluir no diretório server/config o arquivo mongo.js para configuração da conexão desta API com a instância do MongoDB em execução no momento em que a aplicação estiver também em execução.
+  10) Inclui uma API de backend para manter o cadastro de participantes da aplicação. Para isso foi necessário criar o módulo server/aplicacao_backend.js e carregá-lo durante a execução do script server\bin\server.js. Este módulo utiliza o plugin express para configurar o acesso à API do backend e carrega o módulo server/config/mongo.js que configura a conexão desta API com a instância do MongoDB em execução no momento em que a aplicação estiver também em execução.

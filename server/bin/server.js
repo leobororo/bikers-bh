@@ -7,7 +7,7 @@ var port = normalizarPorta(process.env.PORT || '3000');
 /**
  * Configura o Express
  */
-var app = require('../app');
+var app = require('../aplicacao_backend');
 app.set('port', port);
 app.use(express.static(path.join(__dirname, '../public')));
 
