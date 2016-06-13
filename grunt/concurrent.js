@@ -4,5 +4,11 @@ module.exports = {
         options: {
             logConcurrentOutput: true
         }
+    },
+    test: {
+        tasks: ['nodemon', 'watch', 'protractor'],
+        options: {
+            logConcurrentOutput: true
+        }
     }
 };
