@@ -15,15 +15,23 @@ Repositório para o trabalho final da disciplina de Desenvolvimento de Aplicaç�
 
 2) No diretório bikers-bh: npm install
 
-3) No diretório bikers-bh: grunt
+3) No diretório bikers-bh: npm start
 
 4) Acessar a página inicial da aplicação no browser: http://localhost:8181/
+
+## Para executar os testes:
+
+1) git clone https://github.com/leobororo/bikers-bh.git
+
+2) No diretório bikers-bh: npm install
+
+3) No diretório bikers-bh: npm test
 
 ## Um pouco mais sobre o que foi feito:
 
  1) Criação do arquivo package.json: será utilizado como arquivo de configuração para o comando npm install. Este arquivo permite especificar algumas coisas importantes sobre o projeto como o seu nome, descrição, versão, dependências, que serão obtidas pelo NPM, e scripts que serão executados em em determinadas fases do target install do NPM.
 
- 2) Configuramos o NPM para executar na fase start o script "node server\bin\server.js". Este script instancia o servidor HTTP e o configura como servidor HTTP da nossa aplicação.
+ 2) Configuramos o NPM para executar o script "grunt" quando o target start do NPM for executado. Este script vai executar a tarefa default.js que será explicada mais abaixo.
 
  3) Configuramos o NPM para executar na fase postinstall o script "grunt build". A execução do comando "grunt build" fará com que o arquivo Gruntfile.js seja utilizado como arquivo de configuração do grunt e também especifica que a task build deverá ser executada.
 
@@ -67,11 +75,13 @@ Repositório para o trabalho final da disciplina de Desenvolvimento de Aplicaç�
 
   14) O repository server/repositories/participanteRepository utiliza o esquema de dados do mongoose definido no módulo server/models/participante.js e o plugin promise para execuções assíncronas no banco de dados.
 
-  15) Inclusão das seguintes dependências no arquivo package.json: grunt-karma, karma, karma-jasmine, karma-phantomjs-launcher, karma-htmlfile-reporter, phantomjs-prebuilt, phantomjs. Configuramos o karma através da criação do arquivo karma.conf.js que define dentre outras coisas que o browser a ser utilizado nos testes é o PhantomJS e que deverá ser gerado o arquivo HTML units.html com o resultado da execução de nossos testes.
+  15) Inclusão das seguintes dependências no arquivo package.json: "grunt-protractor-runner", "selenium-standalone" e "protractor". Configuramos o protractor através da criação do arquivo protractor.conf.js que define dentre outras coisas que utilizaremos o selenium e o chrome-driver execução de nossos testes fim-a-fim.
 
-  16) Criação de uma tarefa karma.js com informações sobre os arquivos de deverão ser utilizados para execução dos testes.
+  16) Criação de uma tarefa protractor.js com informações sobre os arquivos de deverão ser utilizados para execução dos testes.
 
-  ## Um pouco mais sobre o site responsível
+  17) Adição de um script para execução pelo comando npm test: grunt test. Que vai executar a tarefa definida no arquivo test.js que vai executar a aplicação via nodemon e os testes via protractor.
+
+  ## Um pouco mais sobre o site responsivo
   01 Sobre o Nav:
     O menu contém as seguintes configurações de visualização:
     A) 100% - O menu abre um ao lado do outro (float: left);

@@ -20,7 +20,7 @@ describe('Bikers-BH', function() {
     browser.get('http://localhost:8181');
     element(by.id('link-participantes')).click();
     browser.driver.sleep(1000);
-    element(by.className("botao-view-update")).click();
+    element.all(by.className("botao-view-update")).last().click();
     browser.driver.sleep(1000);
     element(by.id('name')).clear();
     element(by.id('name')).sendKeys("Teste 2");
@@ -41,10 +41,13 @@ describe('Bikers-BH', function() {
     browser.get('http://localhost:8181');
     element(by.id('link-participantes')).click();
     browser.driver.sleep(1000);
-    element(by.className("botao-delete")).click();
+
+    var numero = element.all(by.className("botao-delete")).count();
+    expect(numero).toEqual(element.all(by.className("botao-delete")).count());
+    element.all(by.className("botao-delete")).last().click();
     browser.driver.sleep(1000);
 
-    expect(element(by.className("name-class")).isPresent()).toBe(false);
+    expect(numero).not.toEqual(element.all(by.className("botao-delete")).count());
   });
 
 });

@@ -44,13 +44,7 @@
     "selenium-standalone": "latest"
   },
   "devDependencies": {
-    "protractor": "latest",
-    "karma": "latest",
-    "karma-jasmine": "latest",
-    "karma-phantomjs-launcher": "latest",
-    "karma-htmlfile-reporter": "latest",
-    "phantomjs-prebuilt": "latest",
-    "phantomjs": "latest"
+    "protractor": "latest"
   },
   "engines": {
     "node": "4.4.5",
