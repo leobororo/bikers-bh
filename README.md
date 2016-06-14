@@ -19,13 +19,13 @@ Repositório para o trabalho final da disciplina de Desenvolvimento de Aplicaç�
 
 4) Acessar a página inicial da aplicação no browser: http://localhost:8181/
 
-## Para executar os testes:
+## Para executar os testes fim-a-fim:
 
 1) git clone https://github.com/leobororo/bikers-bh.git
 
 2) No diretório bikers-bh: npm install
 
-3) No diretório bikers-bh: npm test
+3) No diretório bikers-bh: npm test (necessário ter o java instalado)
 
 ## Um pouco mais sobre o que foi feito:
 

@@ -26,6 +26,8 @@ exports.config = {
   // seleniumArgs: ['-browserTimeout=60'],
   seleniumArgs: [],
 
+  chromeOnly: true,
+
   // If sauceUser and sauceKey are specified, seleniumServerJar will be ignored.
   // The tests will be run remotely using SauceLabs.
   sauceUser: null,
