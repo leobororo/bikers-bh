@@ -8,7 +8,7 @@
   "scripts": {
     "start": "grunt",
     "test": "grunt test",
-  	"postinstall": "bower install && grunt build && node ./node_modules/protractor/bin/webdriver-manager update"
+  	"postinstall": "bower install && grunt build"
   },
   "repository": {
     "type": "git",
@@ -40,8 +40,7 @@
   	"mongoose": "^4.4.19",
     "morgan": "~1.6.1",
   	"promise": "^7.1.1",
-  	"requirejs": "latest",
-    "selenium-standalone": "latest"
+  	"requirejs": "latest"
   },
   "devDependencies": {
     "protractor": "latest"
