@@ -29,7 +29,7 @@
     "grunt-concurrent": "^2.3.0",
     "grunt-nodemon": "^0.4.2",
     "grunt-contrib-jshint": "latest",
-    "grunt-protractor-runner": "latest",
+    "grunt-protractor-runner": "2.0.0",
     "load-grunt-config": "latest",
     "load-grunt-tasks": "latest",
     "time-grunt": "latest",
