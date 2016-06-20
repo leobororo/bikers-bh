@@ -27,6 +27,8 @@ Repositório para o trabalho final da disciplina de Desenvolvimento de Aplicaç�
 
 3) No diretório bikers-bh: npm test (necessário ter o java instalado)
 
+Obs: Os testes utilizam o plugin protractor, selenium e web-driver do google chrome e foram executados no ambiente virtual do linux fornecido durante a disciplina e no Windows 10. A execução dos testes depende de compatibilidade entre o web-driver e a versão do google chrome instalada.
+
 ## Um pouco mais sobre o que foi feito:
 
  1) Criação do arquivo package.json: será utilizado como arquivo de configuração para o comando npm install. Este arquivo permite especificar algumas coisas importantes sobre o projeto como o seu nome, descrição, versão, dependências, que serão obtidas pelo NPM, e scripts que serão executados em em determinadas fases do target install do NPM.
@@ -75,26 +77,40 @@ Repositório para o trabalho final da disciplina de Desenvolvimento de Aplicaç�
 
   14) O repository server/repositories/participanteRepository utiliza o esquema de dados do mongoose definido no módulo server/models/participante.js e o plugin promise para execuções assíncronas no banco de dados.
 
-  15) Inclusão das seguintes dependências no arquivo package.json: "grunt-protractor-runner", "selenium-standalone" e "protractor". Configuramos o protractor através da criação do arquivo protractor.conf.js que define dentre outras coisas que utilizaremos o selenium e o chrome-driver execução de nossos testes fim-a-fim.
+  15) Inclusão das seguintes dependências no arquivo package.json: "grunt-protractor-runner", "selenium-standalone" e "protractor". Configuramos o protractor através da criação do arquivo protractor.conf.js que define dentre outras coisas que utilizaremos o selenium e o chrome-driver para execução de nossos testes fim-a-fim. Foram criados três cenários de testes fim-afim no arquivo test/inicioSpec.js. No primeiro cenário um novo participante é inserido, no segundo cenário ele é modificado e no terceiro cenário ele é excluído. Por consequência outros botões e links são testados.
 
   16) Criação de uma tarefa protractor.js com informações sobre os arquivos de deverão ser utilizados para execução dos testes.
 
   17) Adição de um script para execução pelo comando npm test: grunt test. Que vai executar a tarefa definida no arquivo test.js que vai executar a aplicação via nodemon e os testes via protractor.
 
   ## Um pouco mais sobre o site responsivo
+
   01 Sobre o Nav:
+
     O menu contém as seguintes configurações de visualização:
+
     A) 100% - O menu abre um ao lado do outro (float: left);
+
     B) 44em - O menu fica um abaixo do outro  (float:none);
+
     B) 40em - As opções do menu e a imagem são escondidas. O menu passa a ser acessado por um ícone localizado no canto superior direito da tela. Instrução de uso:
+
           - Clique na imagem do menu para visualizar as opções;
+
           - Selecione o link desejado;
+
           - Após finalizar, clique na parte cinza ao lado esquedo do menu para ele seja fechado.
+
   02) Sobre o aside - section - article - footer;
+
       Á pagina está separada em duas partes abaixo do menu obedecendo as seguintes configurações de visualização:
+
       A ) 100% - A página é dividida em duas parte. A parte central aparece o conteúdo das opções contidas no menu e ao lado esquerdo as Frases famosas;
+
       B ) Outras: Em qualquer mudança de tamanho as frases famosas vão para o final da página preservando o conteúdo dos menus na parte central da página;
+
   03) Sobre form:
+
     O form está destinado para a relação de participando  preservando as seguintes configurações de visualização:
     a) 100% - A relação de usuário cadastrado aparece em formato de tabela com o nome da coluna e os dados abaixo;
     B)  Outras: - Em qualquer mudança de tamanho as colunas da tabelas passa a ser exibida em linha, com uma legenda e os dados ao lado;
